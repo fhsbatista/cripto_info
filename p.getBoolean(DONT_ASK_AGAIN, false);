@@ -1,0 +1,29 @@
+[33mcommit bd8f825ef107aeb22a50ac4eaf17ce37f087a9b8[m
+Author: Fernando Batista <fernandohsbatista@gmail.com>
+Date:   Mon May 7 05:27:45 2018 -0300
+
+    Adicionado botao de refresh na toolbar
+
+[33mcommit 07687b15c7bfbbc0c0b4ffb8ba4a398954ed04b2[m
+Author: Fernando Batista <fernandohsbatista@gmail.com>
+Date:   Mon May 7 04:28:15 2018 -0300
+
+    Adicionado e testado o recurso de feedback do usuario
+
+[33mcommit 71862c73dff05d2e766614c75777a8eb7b7a829f[m
+Author: Fernando Batista <fernandohsbatista@gmail.com>
+Date:   Sun May 6 07:47:25 2018 -0300
+
+    Adicionado o manager que controla a exibiçao do rate dialog
+
+[33mcommit 4ed55eef69be20c1a8bc336e4c396a882963dba9[m
+Author: Fernando Batista <fernandohsbatista@gmail.com>
+Date:   Tue May 1 15:03:11 2018 -0300
+
+    Atualizaçao do Read.me
+
+[33mcommit 5f8c82a599bed4f3b913d084d52d429558da5770[m
+Author: Fernando Batista <fernandohsbatista@gmail.com>
+Date:   Tue May 1 14:38:11 2018 -0300
+
+    Commit inicial
