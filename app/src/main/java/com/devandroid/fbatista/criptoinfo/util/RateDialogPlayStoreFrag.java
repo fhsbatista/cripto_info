@@ -1,5 +1,7 @@
 package com.devandroid.fbatista.criptoinfo.util;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -34,18 +36,32 @@ public class RateDialogPlayStoreFrag extends RateDialogFrag {
     @Override
     public void onClick(View v) {
 
-        switch (v.getId()){
+        switch (v.getId()) {
 
             case R.id.bt_no:
-                dismiss();
+
                 break;
 
             case R.id.bt_yes:
-                Toast.makeText(getActivity(), "Aqui vai a playstore", Toast.LENGTH_SHORT).show();
+                String packageName = "com.devandroid.fbatista.criptoinfo";
+                Intent it;
+
+                try {
+                    it = new Intent(Intent.ACTION_VIEW,
+                            Uri.parse("market://details?id=" + packageName));
+                    startActivity(it);
+                } catch (android.content.ActivityNotFoundException e) {
+
+                    it = new Intent(Intent.ACTION_VIEW,
+                            Uri.parse("https://play.google.com/store/apps/" +
+                                    "details?id=" + packageName));
+                    startActivity(it);
+
+                    break;
+
+
+                }
                 dismiss();
-                break;
-
-
         }
     }
 }
