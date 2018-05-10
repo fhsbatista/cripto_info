@@ -7,6 +7,8 @@
  - Listagem das informaçoes: Feita com RecyclerViews
  - Download das thumbnails: Feita com a biblioteca "Picasso"
  - Avaliaçao do aplicativo, via playstore e feedback via e-mail
+ - Download de imagens a partir do Firebase Storage
 
 # Proximos recursos
+ - Fazer cache de imagens
 
