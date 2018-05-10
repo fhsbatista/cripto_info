@@ -1,29 +1,37 @@
 package com.devandroid.fbatista.criptoinfo.adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.devandroid.fbatista.criptoinfo.DescricaoActivity;
 import com.devandroid.fbatista.criptoinfo.R;
 import com.devandroid.fbatista.criptoinfo.model.CryptoCurrency;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class CryptoCurrencyAdapter extends RecyclerView.Adapter<CryptoCurrencyAdapter.MyViewHolder> {
+public class CryptoCurrencyAdapter extends RecyclerView.Adapter<CryptoCurrencyAdapter.MyViewHolder>{
 
     private List<CryptoCurrency> currencies;
     private Context context;
+
 
     public CryptoCurrencyAdapter(List<CryptoCurrency> currencies, Context context) {
         this.currencies = currencies;
         this.context = context;
     }
+
+
+
 
     @NonNull
     @Override
@@ -44,14 +52,17 @@ public class CryptoCurrencyAdapter extends RecyclerView.Adapter<CryptoCurrencyAd
         holder.mPrice.setText("$ " + currency.getPrice_usd().toString());
         holder.mChange.setText(currency.getPercent_change_24h().toString() + " %");
 
+
+
         if(currency.getPercent_change_24h() >= 0){
             holder.mChange.setTextColor(context.getResources().getColor(R.color.colorPrimaryDarkPositivo));
         }else{
             holder.mChange.setTextColor(context.getResources().getColor(R.color.colorPrimaryDarkNegativo));
 
         }
-
         Picasso.get().load(currency.getThumbnail_url()).resize(72,72).into(holder.mThumbnail);
+
+
 
     }
 
@@ -77,4 +88,5 @@ public class CryptoCurrencyAdapter extends RecyclerView.Adapter<CryptoCurrencyAd
             mThumbnail = itemView.findViewById(R.id.thumbnail_image_view);
         }
     }
-}
+
+    }

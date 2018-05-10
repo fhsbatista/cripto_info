@@ -1,6 +1,7 @@
 package com.devandroid.fbatista.criptoinfo;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
@@ -8,9 +9,11 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -18,7 +21,9 @@ import android.widget.TextView;
 import com.devandroid.fbatista.criptoinfo.adapter.CryptoCurrencyAdapter;
 import com.devandroid.fbatista.criptoinfo.model.CryptoCurrency;
 import com.devandroid.fbatista.criptoinfo.util.RateDialogManager;
+import com.devandroid.fbatista.criptoinfo.util.RecyclerViewItemClickListener;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -39,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView mAtualizacaoLabel;
     private Button mRefresh;
     private Toolbar toolbar;
+    public static final String CURRENCY_KEY = "int_currency_key";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         mAtualizacaoLabel = findViewById(R.id.atualizacao_text_view);
         mRefresh = findViewById(R.id.refresh_button);
 
-        //Chamando manager que verificar se e o momento de pedir avaliaçao e feedback do usuario
+        //Chamando manager que verifica se e o momento de pedir avaliaçao e feedback do usuario
         RateDialogManager.showRateDialog(this, savedInstanceState);
 
 
@@ -67,6 +74,34 @@ public class MainActivity extends AppCompatActivity {
         mCryptoCurrencyAdapter = new CryptoCurrencyAdapter(currencies, this);
         mRecyclerView.setAdapter(mCryptoCurrencyAdapter);
 
+        //Configurando click em item da recyclerview
+        mRecyclerView.addOnItemTouchListener(
+                new RecyclerViewItemClickListener(
+                        getApplicationContext(),
+                        mRecyclerView,
+                        new RecyclerViewItemClickListener.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(View view, int position) {
+                                CryptoCurrency cryptoCurrency = currencies.get(position);
+                                Log.d(TAG, "moeda: " + cryptoCurrency.getName());
+                                Intent intent = new Intent(MainActivity.this, DescricaoActivity.class);
+                                intent.putExtra(CURRENCY_KEY, cryptoCurrency);
+                                startActivity(intent);
+                            }
+
+                            @Override
+                            public void onLongItemClick(View view, int position) {
+
+                            }
+
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                            }
+                        }
+                )
+        );
+
         mRefresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,11 +110,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         verificarConexao();
-
-
-
-
-
     }
 
     private void verificarConexao(){
@@ -104,10 +134,10 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void atualizarDadosMoedas() {
-
         CoinCapService coinCapService = CoinCapService.retrofit.create(CoinCapService.class);
         Call<List<CryptoCurrency>> call = coinCapService.getCryptoCurrency(20);
         call.enqueue(new Callback<List<CryptoCurrency>>() {
+
             @Override
             public void onResponse(Call<List<CryptoCurrency>> call, Response<List<CryptoCurrency>> response) {
                 int code = response.code();

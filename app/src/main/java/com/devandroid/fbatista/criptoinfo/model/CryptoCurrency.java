@@ -1,6 +1,8 @@
 package com.devandroid.fbatista.criptoinfo.model;
 
-public class CryptoCurrency {
+import java.io.Serializable;
+
+public class CryptoCurrency implements Serializable{
 
     public static final String FIXED_URL = "https://coincap.io/images/coins/";
     private String name;
@@ -15,6 +17,7 @@ public class CryptoCurrency {
         this.price_usd = price_usd;
         this.percent_change_24h = percent_change_24h;
     }
+
 
     public String getThumbnail_url() {
         return thumbnail_url;
