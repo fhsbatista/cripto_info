@@ -3,20 +3,14 @@ package com.devandroid.fbatista.criptoinfo;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.devandroid.fbatista.criptoinfo.adapter.CryptoCurrencyAdapter;
 import com.devandroid.fbatista.criptoinfo.model.CryptoCurrency;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class DescricaoActivity extends AppCompatActivity {
 
@@ -25,7 +19,6 @@ public class DescricaoActivity extends AppCompatActivity {
     private TextView mTextViewNameCurrency;
     private TextView mTextViewChangeCurrency;
     private TextView mTextViewValueCurrency;
-
 
 
     @Override
@@ -46,28 +39,44 @@ public class DescricaoActivity extends AppCompatActivity {
         mTextViewChangeCurrency.setText(String.valueOf(cryptoCurrency.getPercent_change_24h()) + " %");
 
 
+        setImageCurrency(cryptoCurrency);
+
+
+
+
+//        Glide.with(this)
+//                .using(new FirebaseImageLoader())
+//                .load(logoStorageReference)
+//                .into(mImgCurrency);
+
+
+
+    }
+
+    public void setImageCurrency(CryptoCurrency cryptoCurrency){
+
+
+
+
+        //Criando a referencia no Firebase Storage para download
         FirebaseStorage firebaseStorage = FirebaseStorage.getInstance();
         StorageReference storageReference = firebaseStorage.getReference();
         StorageReference logoStorageReference = storageReference.child(
                 "coin-logos/" + cryptoCurrency.getSymbol().toLowerCase() + ".png");
 
+
         logoStorageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+
+
             @Override
             public void onSuccess(Uri uri) {
-                Picasso.get().load(uri).resize(72, 72).into(mImgCurrency);
-                Log.d(TAG, "onSucessStorage :" + uri);
-
+                Picasso.get()
+                        .load(uri)
+                        .into(mImgCurrency);
             }
         });
 
-
-
-
-
-
-
-
-
     }
+
 
 }

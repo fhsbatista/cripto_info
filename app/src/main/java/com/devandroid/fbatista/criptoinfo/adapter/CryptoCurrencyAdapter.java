@@ -1,18 +1,14 @@
 package com.devandroid.fbatista.criptoinfo.adapter;
 
 import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.devandroid.fbatista.criptoinfo.DescricaoActivity;
 import com.devandroid.fbatista.criptoinfo.R;
 import com.devandroid.fbatista.criptoinfo.model.CryptoCurrency;
 import com.squareup.picasso.Picasso;
@@ -60,8 +56,12 @@ public class CryptoCurrencyAdapter extends RecyclerView.Adapter<CryptoCurrencyAd
             holder.mChange.setTextColor(context.getResources().getColor(R.color.colorPrimaryDarkNegativo));
 
         }
-        Picasso.get().load(currency.getThumbnail_url()).resize(72,72).into(holder.mThumbnail);
 
+
+        Picasso.get()
+                .load(currency.getThumbnail_url())
+                .resize(72,72)
+                .into(holder.mThumbnail);
 
 
     }
