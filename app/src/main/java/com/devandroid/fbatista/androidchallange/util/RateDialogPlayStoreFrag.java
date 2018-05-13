@@ -1,4 +1,4 @@
-package com.devandroid.fbatista.criptoinfo.util;
+package com.devandroid.fbatista.androidchallange.util;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.devandroid.fbatista.criptoinfo.R;
+import com.devandroid.fbatista.androidchallange.R;
 
 public class RateDialogPlayStoreFrag extends RateDialogFrag {
 

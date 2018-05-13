@@ -1,4 +1,4 @@
-package com.devandroid.fbatista.criptoinfo.model;
+package com.devandroid.fbatista.androidchallange.model;
 
 import java.io.Serializable;
 

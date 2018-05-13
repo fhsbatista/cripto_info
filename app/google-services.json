@@ -8,6 +8,50 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:967284041234:android:8eee3bd6d01abfb5",
+        "android_client_info": {
+          "package_name": "com.devandroid.fbatista.androidchallange"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "967284041234-lelotm17uj6narbuu2575slb7jjosvd4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.devandroid.fbatista.androidchallange",
+            "certificate_hash": "32d049273a66c1904361321e81476d8f16488fad"
+          }
+        },
+        {
+          "client_id": "967284041234-dril2q3sic4j8a1k6h7gvpq5igii5r3i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAM3PpPHSSfgol4uvZD8evg3RUVNAfwNAQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "967284041234-dril2q3sic4j8a1k6h7gvpq5igii5r3i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:967284041234:android:daa076ac1621707b",
         "android_client_info": {
           "package_name": "com.devandroid.fbatista.criptoinfo"

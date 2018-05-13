@@ -1,4 +1,4 @@
-package com.devandroid.fbatista.criptoinfo;
+package com.devandroid.fbatista.androidchallange;
 
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.devandroid.fbatista.criptoinfo.model.CryptoCurrency;
+import com.devandroid.fbatista.androidchallange.model.CryptoCurrency;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;

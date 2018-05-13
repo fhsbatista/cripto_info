@@ -1,4 +1,4 @@
-package com.devandroid.fbatista.criptoinfo;
+package com.devandroid.fbatista.androidchallange;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.devandroid.fbatista.criptoinfo.util;
+package com.devandroid.fbatista.androidchallange.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;

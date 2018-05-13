@@ -1,4 +1,4 @@
-package com.devandroid.fbatista.criptoinfo.adapter;
+package com.devandroid.fbatista.androidchallange.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -9,8 +9,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.devandroid.fbatista.criptoinfo.R;
-import com.devandroid.fbatista.criptoinfo.model.CryptoCurrency;
+import com.devandroid.fbatista.androidchallange.R;
+import com.devandroid.fbatista.androidchallange.model.CryptoCurrency;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;

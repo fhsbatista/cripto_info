@@ -1,4 +1,4 @@
-package com.devandroid.fbatista.criptoinfo.receiver;
+package com.devandroid.fbatista.androidchallange.receiver;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

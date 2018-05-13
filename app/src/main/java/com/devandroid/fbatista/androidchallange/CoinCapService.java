@@ -1,6 +1,6 @@
-package com.devandroid.fbatista.criptoinfo;
+package com.devandroid.fbatista.androidchallange;
 
-import com.devandroid.fbatista.criptoinfo.model.CryptoCurrency;
+import com.devandroid.fbatista.androidchallange.model.CryptoCurrency;
 
 import java.util.List;
 

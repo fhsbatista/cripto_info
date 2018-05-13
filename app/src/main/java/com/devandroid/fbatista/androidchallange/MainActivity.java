@@ -1,4 +1,4 @@
-package com.devandroid.fbatista.criptoinfo;
+package com.devandroid.fbatista.androidchallange;
 
 import android.content.Context;
 import android.content.Intent;
@@ -18,10 +18,10 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.devandroid.fbatista.criptoinfo.adapter.CryptoCurrencyAdapter;
-import com.devandroid.fbatista.criptoinfo.model.CryptoCurrency;
-import com.devandroid.fbatista.criptoinfo.util.RateDialogManager;
-import com.devandroid.fbatista.criptoinfo.util.RecyclerViewItemClickListener;
+import com.devandroid.fbatista.androidchallange.adapter.CryptoCurrencyAdapter;
+import com.devandroid.fbatista.androidchallange.model.CryptoCurrency;
+import com.devandroid.fbatista.androidchallange.util.RateDialogManager;
+import com.devandroid.fbatista.androidchallange.util.RecyclerViewItemClickListener;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;

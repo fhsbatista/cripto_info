@@ -1,4 +1,4 @@
-package com.devandroid.fbatista.criptoinfo.util;
+package com.devandroid.fbatista.androidchallange.util;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RatingBar;
 
-import com.devandroid.fbatista.criptoinfo.R;
+import com.devandroid.fbatista.androidchallange.R;
 
 public class RateDialogFrag extends DialogFragment
                                 implements RatingBar.OnRatingBarChangeListener
